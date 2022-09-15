@@ -1,0 +1,20 @@
+---
+name: test_matrx
+
+on:
+  workflow_dispatch:
+  #push:
+    #branches: [master]
+
+jobs:
+  compile:
+    strategy:
+      matrix:
+        BUILD_ARCH: [broadwell, silvermont, nonexistent]
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pvelati/docker-debian-pve-builder:main
+    steps:
+       - name: Clean space
+         run: |
+           echo ${{ matrix.BUILD_ARCH }}
