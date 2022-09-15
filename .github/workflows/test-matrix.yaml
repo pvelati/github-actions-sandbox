@@ -1,5 +1,5 @@
 ---
-name: test_matrx
+name: test_matrix
 
 on:
   workflow_dispatch:
@@ -15,6 +15,6 @@ jobs:
     container:
       image: ghcr.io/pvelati/docker-debian-pve-builder:main
     steps:
-       - name: Clean space
+       - name: Print BUILD_ARCH
          run: |
            echo ${{ matrix.BUILD_ARCH }}
