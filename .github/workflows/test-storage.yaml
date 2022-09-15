@@ -1,0 +1,27 @@
+---
+name: test_maximize_storage
+
+on:
+  workflow_dispatch:
+  #push:
+    #branches: [master]
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pvelati/docker-debian-pve-builder:main
+      volumes:
+        - /opt:/sys_root/opt
+        - /usr/local/lib:/sys_root/usr/local/lib
+        - /usr/local/share:/sys_root/usr/local/share
+        - /usr/share:/sys_root/usr/share
+    steps:
+       - name: Clean space
+         run: |
+          df -h
+          rm -rf /sys_root/opt/az /sys_root/opt/google /sys_root/opt/hhvm /sys_root/opt/hostedtoolcache /sys_root/opt/microsoft /sys_root/opt/mssql-tools /sys_root/opt/pipx /sys_root/opt/pipx_bin /sys_root/opt/post-generation /sys_root/opt/vsts 
+          rm -rf /sys_root/usr/local/lib/R /sys_root/usr/local/lib/android /sys_root/usr/local/lib/heroku /sys_root/usr/local/lib/lein /sys_root/usr/local/lib/node_modules /sys_root/usr/local/lib/python*
+          rm -rf /sys_root/usr/local/share/applications /sys_root/usr/local/share/chrom* /sys_root/usr/local/share/cmake* /sys_root/usr/local/share/fonts /sys_root/usr/local/share/*_driver /sys_root/usr/local/share/man /sys_root/usr/local/share/phantom*
+          rm -rf /sys_root/usr/share/dotnet /sys_root/usr/share/host /sys_root/usr/share/packs /sys_root/usr/share/sdk* /sys_root/usr/share/shared /sys_root/usr/share/templates
+          df -h
