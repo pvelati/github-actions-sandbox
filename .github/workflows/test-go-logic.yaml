@@ -1,8 +1,9 @@
 name: test-go-build-exection
 
 on:
-  push:
-    branches: [ "main" ]
+  dispatch:
+#  push:
+#    branches: [ "main" ]
 
 env:
   GH_TOKEN_TRIGGER: ${{ secrets.GH_TOKEN_TRIGGER }}
