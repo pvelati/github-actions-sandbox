@@ -36,7 +36,9 @@ func makeDefaultWebhook(
 			EventType: "trigger_build",
 			ClientPayload: ClientPayload{
 				Repository: Repository{
+					Codename: codename,
 					Version: version,
+					Arch: arch,
 				},
 			},
 		}
