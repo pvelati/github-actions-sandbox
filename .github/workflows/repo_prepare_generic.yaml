@@ -1,0 +1,22 @@
+---
+name: test_receive_post_trigger
+
+on:  # yamllint disable-line rule:truthy
+  repository_dispatch:
+    types: [trigger_build]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pvelati/docker-debian-repo-mgmt:main
+    steps:
+      # yamllint disable rule:line-length
+      - name: Print variables from POST
+        run: |
+          #echo "codename -> ${{ github.event.client_payload.repository.codename }}"
+          #echo "owner    -> ${{ github.event.client_payload.repository.owner }}"
+          #echo "name     -> ${{ github.event.client_payload.repository.name }}"
+          #echo "tag      -> ${{ github.event.client_payload.repository.tag }}"
+          echo "version      -> ${{ github.event.client_payload.repository.version }}"
+      # yamllint enable rule:line-length
