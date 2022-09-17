@@ -1,4 +1,4 @@
-name: Go
+name: test-go-build-exection
 
 on:
   push:
@@ -6,8 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
+env:
+  GH_TOKEN_TRIGGER: ${{ secrets.GH_TOKEN_TRIGGER }}
 
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
