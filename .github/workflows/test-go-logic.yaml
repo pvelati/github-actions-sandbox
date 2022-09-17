@@ -1,7 +1,7 @@
 name: test-go-build-exection
 
 on:
-  dispatch:
+  workflow_dispatch:
 #  push:
 #    branches: [ "main" ]
 
