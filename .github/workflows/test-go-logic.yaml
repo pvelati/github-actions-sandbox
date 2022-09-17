@@ -1,9 +1,9 @@
 name: test-go-build-exection
 
-on:
-  workflow_dispatch:
-#  push:
-#    branches: [ "main" ]
+on:  # yamllint disable-line rule:truthy
+  # workflow_dispatch:
+  schedule:
+    - cron: '1 * * * *'  # Every 4 hours
 
 env:
   GH_TOKEN_TRIGGER: ${{ secrets.GH_TOKEN_TRIGGER }}
