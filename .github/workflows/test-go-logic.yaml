@@ -3,7 +3,7 @@ name: test-go-build-exection
 on:  # yamllint disable-line rule:truthy
   # workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *' 
+    - cron: '*/9 * * * *' 
 
 env:
   GH_TOKEN_TRIGGER: ${{ secrets.GH_TOKEN_TRIGGER }}
