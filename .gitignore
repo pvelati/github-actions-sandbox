@@ -24,7 +24,3 @@ go.work
 ### Go Patch ###
 /vendor/
 /Godeps/
-
-# End of https://www.toptal.com/developers/gitignore/api/go
-
-github-actions-sandbox
