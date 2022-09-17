@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pvelati/github-actions-sandbox"
+	"github.com/pvelati/github-actions-sandbox/aptutil"
 	"regexp"
 	"time"
 )

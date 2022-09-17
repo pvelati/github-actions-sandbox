@@ -1,4 +1,4 @@
-module github-actions-sandbox
+module github.com/pvelati/github-actions-sandbox
 
 go 1.18
 
