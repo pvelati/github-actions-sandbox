@@ -8,8 +8,6 @@ on:  # yamllint disable-line rule:truthy
 jobs:
   run:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/pvelati/docker-debian-repo-mgmt:main
     steps:
       # yamllint disable rule:line-length
       - name: Print variables from POST
