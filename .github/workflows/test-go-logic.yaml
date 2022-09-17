@@ -3,8 +3,6 @@ name: test-go-build-exection
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 env:
   GH_TOKEN_TRIGGER: ${{ secrets.GH_TOKEN_TRIGGER }}
@@ -15,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Go
+    - name: Setup Go
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
@@ -25,3 +23,11 @@ jobs:
 
     - name: Run
       run: ./github-actions-sandbox
+
+    - name: Commit build files
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add last-execution.json 
+        git commit -m "Update last-execution.json"
+        git push

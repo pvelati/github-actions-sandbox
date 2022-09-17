@@ -12,9 +12,10 @@ jobs:
       # yamllint disable rule:line-length
       - name: Print variables from POST
         run: |
-          #echo "codename -> ${{ github.event.client_payload.repository.codename }}"
+          echo "codename -> ${{ github.event.client_payload.repository.codename }}"
           #echo "owner    -> ${{ github.event.client_payload.repository.owner }}"
           #echo "name     -> ${{ github.event.client_payload.repository.name }}"
           #echo "tag      -> ${{ github.event.client_payload.repository.tag }}"
-          echo "version      -> ${{ github.event.client_payload.repository.version }}"
+          echo "version  -> ${{ github.event.client_payload.repository.version }}"
+          echo "arch     -> ${{ github.event.client_payload.repository.arch }}"
       # yamllint enable rule:line-length
