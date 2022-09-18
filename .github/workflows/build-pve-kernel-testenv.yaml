@@ -32,7 +32,6 @@ jobs:
           echo $VERSION
           echo $ARCH
           echo $REPO_TARGET
-          exit 1
 
       - name: Configure stuff
         working-directory: ./pve-kernel
