@@ -50,8 +50,6 @@ jobs:
 
       - name: Build metapackage
         run: |
-          export CPU_ARCH=$(ls ../pve-kernel/pve-kernel-libc*.deb | cut -d '_' -f3 | cut -d '.' -f1)
-          export KERNEL_VERSION=$(ls ../pve-kernel/pve-kernel-libc*.deb | cut -d '_' -f2)
           export META_VERSION=$(date -u +%y%m%d%H%M)
           env
 # yamllint enable rule:line-length
