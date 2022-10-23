@@ -9,7 +9,5 @@
 echo "PRINT VARIABLES"
 echo "BUILD_ARCH: $BUILD_ARCH"
 
-export KERNEL_VERSION=$(ls ../pve-kernel/pve-headers-*.deb | grep -oP '5.15.\d+-\d+' | head -n 1)
-echo "KERNEL_VERSION=$(echo $KERNEL_VERSION)" >> $GITHUB_ENV
+export KERNEL_VERSION=5.15
 export META_VERSION=$(date -u +%y%m%d%H)
-echo "META_VERSION=$(echo $META_VERSION)" >> $GITHUB_ENV
