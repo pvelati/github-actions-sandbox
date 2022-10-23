@@ -3,7 +3,6 @@
 name: test_build_proxmox_kernel_5.15
 
 run-name: ${{ github.event.client_payload.repository.arch }}
-
 concurrency: ${{ github.event.client_payload.repository.arch }}
 
 on:  # yamllint disable-line rule:truthy
@@ -17,18 +16,13 @@ env:
   # ARCH: ${{ github.event.client_payload.repository.arch }}
   REPO_TARGET: pvelati/apt-repository
   KERNEL_TARGET: 5.15
+  BUILD_ARCH: ${{ github.event.client_payload.repository.arch }}
 
 jobs:
   build:
-    strategy:
-      matrix:
-        BUILD_ARCH: [broadwell, silvermont]
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/pvelati/docker-debian-pve-builder:main
-
     steps:
-      - name: Wait 10 minutes for ${{ matrix.BUILD_ARCH }}  
+      - name: Wait 10 minutes for ${{ BUILD_ARCH }}
         run: |
           echo "Sleeping for 10 minutes ..."
           sleep 10m
