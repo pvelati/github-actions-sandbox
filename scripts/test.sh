@@ -17,8 +17,11 @@ echo "BUILD_NUMBER: $BUILD_NUMBER"
 
 # ------------- DEFINE METAPACKAGE VARIABLES ----------------
 echo "CPU_ARCH=amd64" >> $GITHUB_ENV
+export "CPU_ARCH=amd64"
 echo "KERNEL_VERSION=5.15.64-1" >> $GITHUB_ENV
+export "KERNEL_VERSION=5.15.64-1"
 echo "META_VERSION=$(date -u +%y%m%d%H)" >> $GITHUB_ENV
+export "META_VERSION=$(date -u +%y%m%d%H)"
 
 
 echo "PRINT VARIABLES"

@@ -40,3 +40,6 @@ jobs:
           echo "KERNEL_VERSION_ENV=$KERNEL_VERSION"
           echo "META_VERSION_GH=${{ env.META_VERSION }}"
           echo "META_VERSION=$META_VERSION"
+          echo "CPU_ARCH $CPU_ARCH"
+          echo "KERNEL_VERSION $KERNEL_VERSION"
+          echo "META_VERSION $META_VERSION"
