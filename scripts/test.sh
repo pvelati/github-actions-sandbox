@@ -8,7 +8,6 @@
 
 echo "PRINT VARIABLES"
 echo "BUILD_ARCH: $BUILD_ARCH"
-echo "BUILD_ARCH_GH: ${{ env.BUILD_ARCH }}"
 
-export KERNEL_VERSION=5.15
-export META_VERSION=$(date -u +%y%m%d%H)
+source KERNEL_VERSION=5.15
+source META_VERSION=$(date -u +%y%m%d%H)
