@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 10 minutes for ${{ BUILD_ARCH }}
+      - name: Wait 10 minutes for ${{ env.BUILD_ARCH }}
         run: |
           echo "Sleeping for 10 minutes ..."
           sleep 10m
