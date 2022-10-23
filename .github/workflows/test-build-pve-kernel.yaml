@@ -19,8 +19,11 @@ jobs:
     strategy:
       matrix:
         BUILD_ARCH: [broadwell, silvermont]
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/pvelati/docker-debian-pve-builder:main
 
-   steps:
+    steps:
       - name: Wait 10 minutes for ${{ matrix.BUILD_ARCH }}  
         run: |
           sleep i
