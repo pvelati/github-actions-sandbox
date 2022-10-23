@@ -9,6 +9,5 @@
 echo "PRINT VARIABLES"
 echo "BUILD_ARCH: $BUILD_ARCH"
 
-echo "KERNEL_VERSION=5.15" >> vars
-echo "META_VERSION=$(date -u +%y%m%d%H)" >> vars
-source vars
+echo "KERNEL_VERSION=5.15" >> $GITHUB_ENV
+echo "META_VERSION=$(date -u +%y%m%d%H)" >> $GITHUB_ENV
