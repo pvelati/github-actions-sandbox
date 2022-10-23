@@ -22,8 +22,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 10 minutes for ${{ env.BUILD_ARCH }}
+#       - name: Wait 10 minutes for ${{ env.BUILD_ARCH }}
+#         run: |
+#           echo "Sleeping for 10 minutes ..."
+#           sleep 10m
+#           echo "Completed"
+      - name: Exec script
         run: |
-          echo "Sleeping for 10 minutes ..."
-          sleep 10m
-          echo "Completed"
+          ./build.sh
+
+      - name: Print other variables
+        run: |
+          echo "KERNEL_VERSION_GH=${{ env.KERNEL_VERSION }}"
+          echo "META_VERSION=${{ env.META_VERSION }}"
