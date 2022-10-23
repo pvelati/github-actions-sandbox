@@ -2,10 +2,12 @@
 # yamllint disable rule:line-length
 name: test_build_proxmox_kernel_5.15
 
-concurrency: ${{ matrix.BUILD_ARCH }}
+concurrency: ${{ github.event.client_payload.repository.arch }}
 
 on:  # yamllint disable-line rule:truthy
   workflow_dispatch:  # Trigger manually from github
+  repository_dispatch:
+    types: [trigger_build]
 
 env:
   # OS_CODENAME: ${{ github.event.client_payload.repository.codename }}
