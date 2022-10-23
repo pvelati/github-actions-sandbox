@@ -29,6 +29,8 @@ jobs:
         - /usr/local/share:/sys_root/usr/local/share
         - /usr/share:/sys_root/usr/share
     steps:
+      - uses: actions/checkout@v3
+
 #       - name: Wait 10 minutes for ${{ env.BUILD_ARCH }}
 #         run: |
 #           echo "Sleeping for 10 minutes ..."
@@ -37,9 +39,6 @@ jobs:
 
       - name: Exec script
         run: |
-          ls
-          pwd
-          find .
           ./scripts/test.sh
 
       - name: Print other variables
