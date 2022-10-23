@@ -7,7 +7,7 @@ concurrency: ${{ github.event.client_payload.repository.arch }}
 on:  # yamllint disable-line rule:truthy
   workflow_dispatch:  # Trigger manually from github
   repository_dispatch:
-    types: [trigger_build]
+    types: [trigger_build_wait]
 
 env:
   # OS_CODENAME: ${{ github.event.client_payload.repository.codename }}
@@ -28,7 +28,6 @@ jobs:
     steps:
       - name: Wait 10 minutes for ${{ matrix.BUILD_ARCH }}  
         run: |
-          sleep i
           echo "Sleeping for 10 minutes ..."
           sleep 10m
           echo "Completed"
