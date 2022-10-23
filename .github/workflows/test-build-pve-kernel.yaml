@@ -34,11 +34,14 @@ jobs:
 #           echo "Sleeping for 10 minutes ..."
 #           sleep 10m
 #           echo "Completed"
+
       - name: Exec script
         run: |
-          ./scripts/build.sh
+          ./scripts/test.sh
 
       - name: Print other variables
         run: |
           echo "KERNEL_VERSION_GH=${{ env.KERNEL_VERSION }}"
-          echo "META_VERSION=${{ env.META_VERSION }}"
+          echo "KERNEL_VERSION_ENV=$KERNEL_VERSION"
+          echo "META_VERSION_GH=${{ env.META_VERSION }}"
+          echo "META_VERSION=$META_VERSION"
