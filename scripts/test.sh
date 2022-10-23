@@ -9,5 +9,6 @@
 echo "PRINT VARIABLES"
 echo "BUILD_ARCH: $BUILD_ARCH"
 
-source KERNEL_VERSION=5.15
-source META_VERSION=$(date -u +%y%m%d%H)
+echo "KERNEL_VERSION=5.15" >> vars
+echo "META_VERSION=$(date -u +%y%m%d%H)" >> vars
+source vars
