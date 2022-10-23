@@ -37,6 +37,9 @@ jobs:
 
       - name: Exec script
         run: |
+          ls
+          pwd
+          find .
           ./scripts/test.sh
 
       - name: Print other variables
