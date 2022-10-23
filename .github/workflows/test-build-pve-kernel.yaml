@@ -1,6 +1,6 @@
 ---
 # yamllint disable rule:line-length
-name: test_build_proxmox_kernel_5.15
+name: test_build_proxmox_kernel_5.15_${{ github.event.client_payload.repository.arch }}
 
 concurrency: ${{ github.event.client_payload.repository.arch }}
 
